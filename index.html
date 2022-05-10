@@ -1115,67 +1115,15 @@
             background-color: #918f8f;
             border: 1px solid red;
             position: absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 999;
             text-align: center;
         }
     </style>
 </head>
 <body>
-<div id="boxs">
-    <label>
-        姓名
-        <input id="names" type="text" value="" placeholder="姓名"/>
-    </label>
-    <br>
-    <br>
-    <label>
-        学号
-        <input id="ids" type="text" value="" placeholder="学号"/>
-    </label>
-    <br>
-    <br>
-    <label>
-        政治面貌
-        <input id="zz" type="text" value="" placeholder="政治面貌"/>
-    </label>
-    <br>
-    <br>
-    <label>
-        民族
-        <input id="mz" type="text" value="" placeholder="民族"/>
-    </label>
-    <br>
-    <br>
-    <label>
-        籍贯
-        <input id="jg" type="text" value="" placeholder="籍贯"/>
-    </label>
-
-    <br><br>
-
-    <label>
-        身份证号
-        <input id="sfzh" type="text" value="" placeholder="身份证号"/>
-    </label>
-    <br>
-    <br>
-    <label>
-        电话
-        <input id="number" type="text" value="" placeholder="电话"/>
-    </label>
-    <br>
-    <br>
-    <label>
-        头像
-        <input id="imgs" type="file">
-
-    </label>
-    <br>
-    <button style="background-color: #75e110;color: antiquewhite" onclick="_input()">填写结束</button>
-</div>
 <div data-v-b39d3854="" id="app">
     <div data-v-698f749c="" data-v-b39d3854="" class="main">
         <div data-v-698f749c="" class="main-box">
@@ -1533,7 +1481,7 @@
                     </div>
                     <div data-v-7b47454a="" class="footer-name">通讯录</div>
                 </div>
-                <div data-v-7b47454a="" class="footer-child">
+                <div data-v-7b47454a="" class="footer-child" onclick="run()">
                     <div data-v-7b47454a="" class="footer-icon-box">
                         <i
                                 data-v-7b47454a=""
@@ -1620,11 +1568,65 @@
         </div>
     </div>
 </div>
+
+<div id="boxs">
+    <label>
+        姓名
+        <input id="names" type="text" value="" placeholder="姓名"/>
+    </label>
+    <br>
+    <br>
+    <label>
+        学号
+        <input id="ids" type="text" value="" placeholder="学号"/>
+    </label>
+    <br>
+    <br>
+    <label>
+        政治面貌
+        <input id="zz" type="text" value="" placeholder="政治面貌"/>
+    </label>
+    <br>
+    <br>
+    <label>
+        民族
+        <input id="mz" type="text" value="" placeholder="民族"/>
+    </label>
+    <br>
+    <br>
+    <label>
+        籍贯
+        <input id="jg" type="text" value="" placeholder="籍贯"/>
+    </label>
+
+    <br><br>
+
+    <label>
+        身份证号
+        <input id="sfzh" type="text" value="" placeholder="身份证号"/>
+    </label>
+    <br>
+    <br>
+    <label>
+        电话
+        <input id="number" type="text" value="" placeholder="电话"/>
+    </label>
+    <br>
+    <br>
+    <label>
+        头像
+        <input id="imgs" type="file">
+
+    </label>
+    <br>
+    <button style="background-color: #75e110;color: antiquewhite" onclick="_input()">填写结束</button>
+</div>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
 <script type="text/javascript">
+    document.getElementById('myPhotoImg').src = localStorage.getItem('key')
     function run() {
-
+        window.location.href = 'profile.html'
     }
 
     document.querySelector('#imgs').onchange = function () {
@@ -1633,6 +1635,8 @@
             let reader = new FileReader();
             reader.onload = function () {
                 document.querySelector('#myPhotoImg').src = this.result;
+                localStorage.setItem('key', this.result)
+                console.log(this.result)
             };
             reader.readAsDataURL(file);
         }
@@ -1642,7 +1646,20 @@
     function _input() {
         document.getElementById('boxs').style.display = 'none'
         document.getElementById('mynamebox').innerHTML = document.getElementById('names').value
-        console.log(document.getElementById('img').value)
+        // console.log(document.getElementById('img').value)
+        console.log()
+        const temp = {
+            number: document.getElementById('number').value, // 电话
+            sfzh: document.getElementById('sfzh').value, // 身份证
+            jg: document.getElementById('jg').value, // 籍贯
+            mz: document.getElementById('mz').value, // 民族
+            zz: document.getElementById('zz').value,// 政治
+            ids: document.getElementById('ids').value, // 学号
+            names: document.getElementById('names').value // 姓名
+        }
+        localStorage.setItem('data', JSON.stringify(temp))
+
+        // console.log()
     }
 </script>
 </html>
