@@ -1122,6 +1122,8 @@
 
             z-index: 999;
             text-align: center;
+
+            display: none;
         }
     </style>
 </head>
@@ -1634,8 +1636,7 @@
     }
 
    function up(){
-        alert('双击了')
-        // console.log(1111)
+       document.getElementById('boxs').style.display = 'block'
    }
 
     document.querySelector('#imgs').onchange = function () {
