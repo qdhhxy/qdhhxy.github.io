@@ -1115,14 +1115,12 @@
             background-color: #918f8f;
             border: 1px solid red;
             position: absolute;
-            top: 150px;
-            left: 100px;
-            margin: 0 auto;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
             z-index: 999;
             text-align: center;
         }
-
-
     </style>
 </head>
 <body>
@@ -1281,7 +1279,7 @@
                                     data-v-423456e8=""
                                     class="bottom-icon iconfont icon-icon-test1"
                             ></div>
-                            <div data-v-423456e8="" class="top-icon iconfont icon-kaohe"  ></div>
+                            <div data-v-423456e8="" class="top-icon iconfont icon-kaohe"></div>
                         </div>
                         <div data-v-423456e8="" class="nav-name">辅导员考核</div>
                     </div>
@@ -1629,11 +1627,11 @@
 
     }
 
-    document.querySelector('#imgs').onchange = function (){
-        if(this.files.length){
+    document.querySelector('#imgs').onchange = function () {
+        if (this.files.length) {
             let file = this.files[0];
             let reader = new FileReader();
-            reader.onload = function(){
+            reader.onload = function () {
                 document.querySelector('#myPhotoImg').src = this.result;
             };
             reader.readAsDataURL(file);
@@ -1641,7 +1639,7 @@
     }
 
 
-    function _input(){
+    function _input() {
         document.getElementById('boxs').style.display = 'none'
         document.getElementById('mynamebox').innerHTML = document.getElementById('names').value
         console.log(document.getElementById('img').value)
