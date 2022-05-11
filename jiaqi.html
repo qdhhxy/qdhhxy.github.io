@@ -1,0 +1,518 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta
+            content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0"
+            name="viewport"
+    />
+    <meta content="telephone=no" name="format-detection"/>
+    <title>日常请假</title>
+    <script src="https://lib.baomitu.com/echarts/5.2.0/echarts.min.js"></script>
+    <link
+            href="asserts/css/app.45cff3383610eab49a4294ddedaa8795.css"
+            rel="stylesheet"
+    />
+    <script
+            type="text/javascript"
+            charset="utf-8"
+            async=""
+            src="./asserts/js/14.f1e09671cdacca7ef62b.js"
+    ></script>
+
+    <style type="text/css">
+        .main .main-box .main-container .item-box .content[data-v-b81a320e] {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            padding-right: 10px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            white-space: nowrap;
+        }
+
+        .main .main-box .main-container .item-box .detail[data-v-b81a320e] {
+            font-size: 12px;
+            color: #20d5de;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .main .main-box .main-container .item-box .detail img[data-v-b81a320e] {
+            height: 10px;
+            width: 6px;
+            margin-left: 2px;
+            margin-top: -2px;
+        }
+
+        .main .state[data-v-b81a320e] {
+            height: 48px;
+            width: 48px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        @media screen and (max-width: 320px) {
+            .main .main-container .item-box .item-child[data-v-b81a320e] {
+                padding-left: 35px;
+                padding-right: 10px;
+            }
+        }
+    </style>
+    <style type="text/css">
+        .border-left-1px[data-v-5ba88294]::before {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .form-input-radio .cube-radio-label[data-v-5ba88294] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-radio.border-top-1px[data-v-5ba88294]::before {
+            border-top: 0;
+        }
+
+        .form-input-radio .border-right-1px[data-v-5ba88294]::after {
+            border-right: 0;
+        }
+
+        .form-input-radio .border-bottom-1px[data-v-5ba88294]::after {
+            border-bottom: 0;
+        }
+
+        .form-input-radio.border-bottom-1px[data-v-5ba88294]::after {
+            border-bottom: 0;
+        }
+
+        .form-input-radio.cube-radio-group[data-horz="true"][data-v-5ba88294]::after {
+            border: 0;
+        }
+
+        .form-input-radio[data-horz="true"] .cube-radio-wrap[data-v-5ba88294] {
+            padding: 0;
+        }
+
+        .form-input-checkbox .cube-checkbox-label[data-v-5ba88294] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-checkbox.no-padding .cube-checkbox-wrap[data-v-5ba88294] {
+            padding: 0;
+        }
+
+        .form-input-checkbox-group .cube-checkbox[data-v-5ba88294] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-checkbox-group
+        .cube-checkbox
+        .cube-checkbox-wrap.border-bottom-1px[data-v-5ba88294]::after {
+            border: 0;
+        }
+
+        .form-input-checkbox-group.border-top-1px[data-v-5ba88294]::before {
+            border: 0;
+        }
+
+        .form-input-checkbox-group.border-bottom-1px[data-v-5ba88294]::after {
+            border: 0;
+        }
+
+        .item-parent[data-v-5ba88294] {
+            background-color: #fff;
+            padding: 20px 15px;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <style type="text/css">
+        .border-bottom-1px[data-v-5acd5468]::after,
+        .border-right-1px[data-v-5acd5468]::after,
+        .border-top-1px[data-v-5acd5468]::before,
+        .border-left-1px[data-v-5acd5468]::before {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .form-input-radio .cube-radio-label[data-v-5acd5468] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-radio.border-top-1px[data-v-5acd5468]::before {
+            border-top: 0;
+        }
+
+        .form-input-radio .border-right-1px[data-v-5acd5468]::after {
+            border-right: 0;
+        }
+
+        .form-input-radio .border-bottom-1px[data-v-5acd5468]::after {
+            border-bottom: 0;
+        }
+
+        .form-input-radio.border-bottom-1px[data-v-5acd5468]::after {
+            border-bottom: 0;
+        }
+
+        .form-input-radio.cube-radio-group[data-horz="true"][data-v-5acd5468]::after {
+            border: 0;
+        }
+
+        .form-input-radio[data-horz="true"] .cube-radio-wrap[data-v-5acd5468] {
+            padding: 0;
+        }
+
+        .form-input-checkbox .cube-checkbox-label[data-v-5acd5468] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-checkbox.no-padding .cube-checkbox-wrap[data-v-5acd5468] {
+            padding: 0;
+        }
+
+        .form-input-checkbox-group .cube-checkbox[data-v-5acd5468] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-checkbox-group
+        .cube-checkbox
+        .cube-checkbox-wrap.border-bottom-1px[data-v-5acd5468]::after {
+            border: 0;
+        }
+
+        .form-input-checkbox-group.border-top-1px[data-v-5acd5468]::before {
+            border: 0;
+        }
+
+        .form-input-checkbox-group.border-bottom-1px[data-v-5acd5468]::after {
+            border: 0;
+        }
+
+        .item-nodes[data-v-5acd5468] {
+            font-size: 15px;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: stretch;
+            -webkit-align-items: stretch;
+            align-items: stretch;
+            line-height: 1.3;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .item-nodes[data-v-5acd5468]:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-nodes .item-label[data-v-5acd5468] {
+            color: #333;
+            width: 60px;
+            padding-right: 15px;
+        }
+
+        .item-nodes .item-content[data-v-5acd5468] {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            color: #777;
+            word-break: break-all;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    </style>
+    <style type="text/css">
+        .border-bottom-1px[data-v-4941f420]::after,
+        .border-right-1px[data-v-4941f420]::after,
+        .border-top-1px[data-v-4941f420]::before,
+        .border-left-1px[data-v-4941f420]::before {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        .form-input-radio .cube-radio-label[data-v-4941f420] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-radio.border-top-1px[data-v-4941f420]::before {
+            border-top: 0;
+        }
+
+        .form-input-radio .border-right-1px[data-v-4941f420]::after {
+            border-right: 0;
+        }
+
+        .form-input-radio .border-bottom-1px[data-v-4941f420]::after {
+            border-bottom: 0;
+        }
+
+        .form-input-radio.border-bottom-1px[data-v-4941f420]::after {
+            border-bottom: 0;
+        }
+
+        .form-input-radio.cube-radio-group[data-horz="true"][data-v-4941f420]::after {
+            border: 0;
+        }
+
+        .form-input-radio[data-horz="true"] .cube-radio-wrap[data-v-4941f420] {
+            padding: 0;
+        }
+
+        .form-input-checkbox .cube-checkbox-label[data-v-4941f420] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-checkbox.no-padding .cube-checkbox-wrap[data-v-4941f420] {
+            padding: 0;
+        }
+
+        .form-input-checkbox-group .cube-checkbox[data-v-4941f420] {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .form-input-checkbox-group
+        .cube-checkbox
+        .cube-checkbox-wrap.border-bottom-1px[data-v-4941f420]::after {
+            border: 0;
+        }
+
+        .form-input-checkbox-group.border-top-1px[data-v-4941f420]::before {
+            border: 0;
+        }
+
+        .form-input-checkbox-group.border-bottom-1px[data-v-4941f420]::after {
+            border: 0;
+        }
+
+        .bottom-btn-box[data-v-4941f420] {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+            text-align: center;
+            height: 49px;
+            width: 100%;
+            outline: 0;
+            border: 0;
+            font-size: 15px;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+<div data-v-b39d3854="" id="app">
+    <div data-v-b81a320e="" data-v-b39d3854="" class="main">
+        <div data-v-b81a320e="" class="main-box">
+            <div data-v-b81a320e="" class="main-container">
+                <div data-v-b81a320e="" class="cube-scroll-wrapper">
+                    <div
+                            class="cube-scroll-content"
+                            style="
+                  transition-timing-function: cubic-bezier(
+                    0.165,
+                    0.84,
+                    0.44,
+                    1
+                  );
+                  transition-duration: 0ms;
+                  transform: translate(0px, 0px) scale(1) translateZ(0px);
+                "
+                    >
+                        <div class="cube-scroll-list-wrapper" style="min-height: 650px">
+                            <!---->
+                            <div data-v-b81a320e="">
+                                <div data-v-b81a320e="" class="item-box">
+                                    <div
+                                            data-v-5ba88294=""
+                                            data-v-b81a320e=""
+                                            class="item-parent"
+                                    >
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                        <img
+                                                data-v-b81a320e=""
+                                                data-v-5ba88294=""
+                                                src="data:image/png;base64,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"
+                                                srcset=""
+                                                alt=""
+                                                class="state"
+                                        />
+                                        <!---->
+                                        <!---->
+                                        <!---->
+                                        <div
+                                                data-v-5acd5468=""
+                                                data-v-b81a320e=""
+                                                class="item-nodes"
+                                                data-v-5ba88294=""
+                                        >
+                                            <div data-v-5acd5468="" class="item-label">学号</div>
+                                            <div data-v-5acd5468="" class="item-content">
+                                                <div
+                                                        data-v-b81a320e=""
+                                                        data-v-5acd5468=""
+                                                        class="content"
+                                                        id="ids"
+                                                >
+                                                    123456789
+                                                </div>
+                                                <div
+                                                        data-v-b81a320e=""
+                                                        data-v-5acd5468=""
+                                                        class="detail"
+                                                >
+                                                    查看详情<img
+                                                        data-v-b81a320e=""
+                                                        data-v-5acd5468=""
+                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAYAAAC58NwRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGOTc4QkUzNzgxMjQxMUU5QjM0NkY3MzRDQTAwMUU5RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGOTc4QkUzODgxMjQxMUU5QjM0NkY3MzRDQTAwMUU5RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkY5NzhCRTM1ODEyNDExRTlCMzQ2RjczNENBMDAxRTlEIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkY5NzhCRTM2ODEyNDExRTlCMzQ2RjczNENBMDAxRTlEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Y2frNQAAAS5JREFUeNpiVLh6bwYDA4MFECfe11I8z0AAMAI1/IeyPwNxGFDTDnwamIDYCYifAzEvEG9XvHY/Aa8N////ZwAqEgGyTwGxIlQ8BmjTUlw2MAAl3wApQyC+DhVfAjSkDacGqKaPQMoIiNdChSqBmmqxOgkdABWuB1IBUO40oGHZGDYgA6CCQCDVB+VmAQ1YhdcGJJtA/qiEcncDsTteDVBNHkBqIRCLAfFhJgbC4CwQf4WydZkImB4GpF5B4+ceKAmx4FEcAaSWQ7k3gFgPGBi/mXAobkRSfBSI7UCKQRwWHIrroNw1QIWhOCMOqHgRkIqFcjcBFfvjTBpAxfuQFHdiUwzLD+JAGhSTdlCxPqDiYlyBAfLDbWheAIEyoOJuQhnoIhA/BuJ4QopBACDAAOq1baidIs4oAAAAAElFTkSuQmCC"
+                                                        alt=""
+                                                />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                                data-v-5acd5468=""
+                                                data-v-b81a320e=""
+                                                class="item-nodes"
+                                                data-v-5ba88294=""
+                                        >
+                                            <div data-v-5acd5468="" class="item-label">姓名</div>
+                                            <div data-v-5acd5468="" class="item-content" id="names">
+                                                张三
+                                            </div>
+                                        </div>
+                                        <div
+                                                data-v-5acd5468=""
+                                                data-v-b81a320e=""
+                                                class="item-nodes"
+                                                data-v-5ba88294=""
+                                        >
+                                            <div data-v-5acd5468="" class="item-label">
+                                                请假时间
+                                            </div>
+                                            <div data-v-5acd5468="" class="item-content" id="myTime">
+                                                2022-05-07 08:00至2022-05-07 12:00
+                                            </div>
+                                        </div>
+                                        <div
+                                                data-v-5acd5468=""
+                                                data-v-b81a320e=""
+                                                class="item-nodes"
+                                                data-v-5ba88294=""
+                                        >
+                                            <div data-v-5acd5468="" class="item-label">
+                                                请假时长
+                                            </div>
+                                            <div data-v-5acd5468="" class="item-content" id="timeL">
+                                                0天4小时0分钟
+                                            </div>
+                                        </div>
+                                        <div
+                                                data-v-5acd5468=""
+                                                data-v-b81a320e=""
+                                                class="item-nodes"
+                                                data-v-5ba88294=""
+                                        >
+                                            <div data-v-5acd5468="" class="item-label">
+                                                请假原因
+                                            </div>
+                                            <div data-v-5acd5468="" class="item-content">
+                                                事假
+                                            </div>
+                                        </div>
+                                        <div
+                                                data-v-5acd5468=""
+                                                data-v-b81a320e=""
+                                                class="item-nodes"
+                                                data-v-5ba88294=""
+                                        >
+                                            <div data-v-5acd5468="" class="item-label">
+                                                外出地点
+                                            </div>
+                                            <div data-v-5acd5468="" class="item-content">
+                                                山东省青岛市黄岛区吾悦广场
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cube-pullup-wrapper">
+                            <div class="before-trigger"><span></span></div>
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+        </div>
+        <button
+                data-v-4941f420=""
+                data-v-b81a320e=""
+                class="bottom-btn-box"
+                style="
+            background: linear-gradient(
+              to right,
+              rgb(90, 228, 218),
+              rgb(71, 182, 252)
+            );
+          "
+        >
+            提交请假
+        </button>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="asserts/js/jq.js"></script>
+<script type="text/javascript">
+    // 2022-05-07 08:00至2022-05-07 12:00
+
+    // $(function () {
+    //     let timeDom = document.getElementById('myTime')
+    //
+    //
+    //
+    // })
+    let data = JSON.parse(localStorage.getItem('data'))
+    let times = localStorage.getItem('time')
+    let timeL = JSON.parse(localStorage.getItem('timeL'))
+    console.log(times)
+    document.getElementById('ids').innerHTML = data.ids
+    document.getElementById('names').innerHTML = data.names
+    document.getElementById('myTime').innerHTML = times
+    document.getElementById('timeL').innerHTML = "0天" + timeL + "小时0分钟"
+
+</script>
+</html>

@@ -1246,7 +1246,7 @@
                             ></div>
                             <div
                                     data-v-423456e8=""
-                                    class="top-icon iconfont icon-richangqingjia" onclick="run()"
+                                    class="top-icon iconfont icon-richangqingjia" onclick="_run()"
                             ></div>
                         </div>
                         <div data-v-423456e8="" class="nav-name">日常请假申请</div>
@@ -1623,21 +1623,75 @@
         <input id="imgs" type="file">
 
     </label>
+    <br><br>
+    <label>
+        请假时间
+        <input id="Start" type="text" value="" oninput="_oninput()" placeholder="请假开始的时间24时制">
+        <br><br>
+    </label>
+    <button onclick="_time()">获取时间格式</button>
     <br>
+    <label>
+        请假时长
+        <input id="timeL" type="text" value="4" oninput="_oninputL()" placeholder="请假的时间长短">
+        <br><br>
+    </label>
     <button style="background-color: #75e110;color: antiquewhite" onclick="_input()">填写结束</button>
+    <div style="position: absolute;top: 1px;right: 1px;cursor: pointer" onclick="_back()">
+        关闭
+    </div>
 </div>
 </body>
 <script type="text/javascript" src="asserts/js/jq.js"></script>
 <script type="text/javascript">
+    // 2022-05-07 08:00至2022-05-07 12:00
+    // _time()
+
+    function _time() {
+        let myDate = new Date;
+        let year = myDate.getFullYear(); //获取当前年
+        let mon = myDate.getMonth() + 1; //获取当前月
+        let date = myDate.getDate(); //获取当前日
+        const ymd = year + "-" + mon + "-" + date
+        document.getElementById('Start').value = ymd + " " + "08:00至" + ymd + " 12:00"
+        document.getElementById('timeL').value = 4
+        _oninputL()
+        localStorage.setItem('time', ymd + " " + "08:00至" + ymd + " 12:00")
+    }
+
+
+    function _oninput() {
+        localStorage.setItem('time', document.getElementById('Start').value)
+    }
+
+    function _oninputL() {
+        localStorage.setItem('timeL', document.getElementById('timeL').value)
+    }
+
+    let dataTemp = JSON.parse(localStorage.getItem('data'))
+    if (dataTemp) {
+        document.getElementById('number').value = dataTemp.number
+        document.getElementById('sfzh').value = dataTemp.sfzh
+        document.getElementById('jg').value = dataTemp.jg
+        document.getElementById('mz').value = dataTemp.mz
+        document.getElementById('zz').value = dataTemp.zz
+        document.getElementById('ids').value = dataTemp.ids
+        document.getElementById('names').value = dataTemp.names
+    }
+
     document.getElementById('myPhotoImg').src = localStorage.getItem('key')
 
     function run() {
         window.location.href = 'profile.html'
     }
 
-   function up(){
-       document.getElementById('boxs').style.display = 'block'
-   }
+	function _run(){
+		window.location.href = 'jiaqi.html'
+	}
+	
+    function up() {
+        document.getElementById('boxs').style.display = 'block'
+    }
 
     document.querySelector('#imgs').onchange = function () {
         if (this.files.length) {
@@ -1667,10 +1721,13 @@
             ids: document.getElementById('ids').value, // 学号
             names: document.getElementById('names').value // 姓名
         }
-
         localStorage.setItem('data', JSON.stringify(temp))
 
         // console.log()
+    }
+
+    function _back() { // 关闭
+        document.getElementById('boxs').style.display = 'none'
     }
 </script>
 </html>
